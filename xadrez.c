@@ -1,31 +1,3 @@
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
-
-
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
-
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
-
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
-
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
-
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
-
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
-
 #include <stdio.h>
  
 void recursiveLoop(int movbis) {
@@ -37,42 +9,45 @@ void recursiveLoop(int movbis) {
  
 int main() {
 
+    int casas = 0;
+    int movcavalo = 0;
     int movtorre = 0;
-    int movrainha = 0;
     
-//MOVIMENTAÇÃO DO BISPO
-    printf("Movimentação do Bispo (5 casas na diagonal direita para cima)\n");
+    
+//MOVIMENTAÇÃO DO BISPO UTILIZANDO MODO RECURSIVO
+    printf("Movimentação do Bispo: 5 casas na diagonal direita para cima\n");
     int movbis = 0;
     recursiveLoop(movbis);
+    printf("\n");
 
-//Torre : 
-    printf("Movimentação da Torre (5 casas para à direita)\n");
-    while(movtorre < 5){
+//MOVIMENTAÇÃO DA TORRE (WHILE)
+    printf("Movimentação da Torre: 5 casas para à direita\n");
+    while(movtorre < 20){
     printf("Direita\n");
     movtorre++;
+    if( movtorre == 5){
+       break;
     }
+    }
+    printf("\n");
 
-//RAINHA
-        printf("Movimentação da Rainha (8 casas para à esquerda)\n");
-        while(movrainha < 8){
-        printf("esquerda\n");
-        movrainha++;
-        }
+//MOVIMENTAÇÃO DO CAVALO (WHILE)
+    printf("Movimentação do Cravalo: 1 vez em L para cima à direita\n");
+        while(movcavalo < 20){
+        printf("cima\n");
+        movcavalo++;
+        if(movcavalo == 2){
+        break;
+        } 
+    }
+    printf("direita\n");
+    printf("\n");
 
-//CAVALO
-        printf("Movimentação do Cravalo (1 vez em L para cima à direita)\n");
-        for (int movcavalo = 0; movcavalo < 1; movcavalo++) {
-            printf("cima\n");
-            printf("cima\n");
-            printf("direita\n");}
-    
-
+//MOVIMENTAÇÃO DA RAINHA (FOR)
+printf("Movimentação da Rainha: 8 casas para à esquerda\n");
+for (int movrainha = 0; movrainha <= 7; movrainha++) {
+    printf("esquerda\n");
+}
         
-
-    
-    
-   
-   
-   
     return 0;
 }
